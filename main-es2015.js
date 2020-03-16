@@ -242,7 +242,7 @@ function ContentComponent_tr_74_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", data_r1.total_recovered, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r0.floor(data_r1.total_recovered.replace(",", "") / data_r1.cases.replace(",", "") * 100), "% of total cases)");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r0.floor(data_r1.total_recovered.replace(",", "") / data_r1.cases.replace(",", "") * 100), "% of confirmed cases)");
 } }
 class ContentComponent {
     constructor(service) {
