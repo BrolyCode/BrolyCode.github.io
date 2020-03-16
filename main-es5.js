@@ -446,7 +446,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r0.floor(data_r1.cases.replace(",", "") / ctx_r0.totalCases * 100), "% of total cases)");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r0.floor(data_r1.cases.replace(",", "") * 100 / ctx_r0.totalCases * 100) / 100, "% of total cases)");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -458,7 +458,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r0.floor(data_r1.deaths.replace(",", "") / ctx_r0.totalDeaths * 100), "% of total deaths)");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r0.floor(data_r1.deaths.replace(",", "") * 100 / ctx_r0.totalDeaths * 100) / 100, "% of total deaths)");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -466,7 +466,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r0.floor(data_r1.total_recovered.replace(",", "") / data_r1.cases.replace(",", "") * 100), "% of confirmed cases)");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r0.floor(data_r1.total_recovered.replace(",", "") * 100 / data_r1.cases.replace(",", "") * 100) / 100, "% of confirmed cases)");
       }
     }
 
