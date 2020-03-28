@@ -353,7 +353,7 @@
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! /home/zakaria/Desktop/covid/src/styles.css */
+    /*! /home/zakaria/Desktop/front/Covid-19-Real-Time-Statistics/src/styles.css */
     "./src/styles.css");
     /***/
   }
