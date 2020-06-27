@@ -267,21 +267,21 @@ function ContentComponent_tr_103_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (+", data_r3.new_cases, ")");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.cases.replace(",", "") * 100 / ctx_r2.totalCases * 100) / 100, "% of total cases)");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.cases.replace(",", "").replace(",", "") * 100 / ctx_r2.totalCases * 100) / 100, "% of total cases)");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r3.active_cases);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.active_cases.replace(",", "") * 100 / ctx_r2.totalActiveCases * 100) / 100, "% of total active cases)");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.active_cases.replace(",", "").replace(",", "") * 100 / ctx_r2.totalActiveCases * 100) / 100, "% of total active cases)");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](data_r3.deaths);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (+", data_r3.new_deaths, ")");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.deaths.replace(",", "") * 100 / ctx_r2.totalDeaths * 100) / 100, "% of total deaths)");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.deaths.replace(",", "").replace(",", "") * 100 / ctx_r2.totalDeaths * 100) / 100, "% of total deaths)");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", data_r3.total_recovered, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.total_recovered.replace(",", "") * 100 / data_r3.cases.replace(",", "") * 100) / 100, "% of confirmed cases)");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.total_recovered.replace(",", "") * 100 / data_r3.cases.replace(",", "").replace(",", "") * 100) / 100, "% of confirmed cases)");
 } }
 class ContentComponent {
     constructor(service, mailingService) {
@@ -317,12 +317,12 @@ class ContentComponent {
             for (let val in v) {
                 if (v[val].country_name !== "")
                     this.dataSet.push(v[val]);
-                this.newCases += v[val].new_cases.replace(",", "") === "N/A" ? 0 : parseInt(v[val].new_cases.replace(",", ""));
-                this.newDeaths += v[val].new_deaths.replace(",", "") === "N/A" ? 0 : parseInt(v[val].new_deaths.replace(",", ""));
-                this.totalCases += v[val].cases.replace(",", "") === "N/A" ? 0 : parseInt(v[val].cases.replace(",", ""));
-                this.totalDeaths += v[val].deaths.replace(",", "") === "N/A" ? 0 : parseInt(v[val].deaths.replace(",", ""));
-                this.totalRecovered += v[val].total_recovered.replace(",", "") === "N/A" ? 0 : parseInt(v[val].total_recovered.replace(",", ""));
-                this.totalActiveCases += v[val].active_cases.replace(",", "") === "N/A" ? 0 : parseInt(v[val].active_cases.replace(",", ""));
+                this.newCases += v[val].new_cases.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].new_cases.replace(",", "").replace(",", ""));
+                this.newDeaths += v[val].new_deaths.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].new_deaths.replace(",", "").replace(",", ""));
+                this.totalCases += v[val].cases.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].cases.replace(",", "").replace(",", "").replace(",", ""));
+                this.totalDeaths += v[val].deaths.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].deaths.replace(",", "").replace(",", "").replace(",", ""));
+                this.totalRecovered += v[val].total_recovered.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].total_recovered.replace(",", "").replace(",", ""));
+                this.totalActiveCases += v[val].active_cases.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].active_cases.replace(",", "").replace(",", ""));
             }
         });
         console.log(this.dataSet);
@@ -595,6 +595,7 @@ class DataService {
             fetch(myRequest)
                 .then(response => response.json())
                 .then(data => {
+                console.log(data);
                 observer.next(data.countries_stat);
                 observer.complete();
             })

@@ -514,7 +514,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.cases.replace(",", "") * 100 / ctx_r2.totalCases * 100) / 100, "% of total cases)");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.cases.replace(",", "").replace(",", "") * 100 / ctx_r2.totalCases * 100) / 100, "% of total cases)");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -522,7 +522,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.active_cases.replace(",", "") * 100 / ctx_r2.totalActiveCases * 100) / 100, "% of total active cases)");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.active_cases.replace(",", "").replace(",", "") * 100 / ctx_r2.totalActiveCases * 100) / 100, "% of total active cases)");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -534,7 +534,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.deaths.replace(",", "") * 100 / ctx_r2.totalDeaths * 100) / 100, "% of total deaths)");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.deaths.replace(",", "").replace(",", "") * 100 / ctx_r2.totalDeaths * 100) / 100, "% of total deaths)");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -542,7 +542,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.total_recovered.replace(",", "") * 100 / data_r3.cases.replace(",", "") * 100) / 100, "% of confirmed cases)");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" (", ctx_r2.floor(data_r3.total_recovered.replace(",", "") * 100 / data_r3.cases.replace(",", "").replace(",", "") * 100) / 100, "% of confirmed cases)");
       }
     }
 
@@ -593,12 +593,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.service.getData().subscribe(function (v) {
             for (var val in v) {
               if (v[val].country_name !== "") _this.dataSet.push(v[val]);
-              _this.newCases += v[val].new_cases.replace(",", "") === "N/A" ? 0 : parseInt(v[val].new_cases.replace(",", ""));
-              _this.newDeaths += v[val].new_deaths.replace(",", "") === "N/A" ? 0 : parseInt(v[val].new_deaths.replace(",", ""));
-              _this.totalCases += v[val].cases.replace(",", "") === "N/A" ? 0 : parseInt(v[val].cases.replace(",", ""));
-              _this.totalDeaths += v[val].deaths.replace(",", "") === "N/A" ? 0 : parseInt(v[val].deaths.replace(",", ""));
-              _this.totalRecovered += v[val].total_recovered.replace(",", "") === "N/A" ? 0 : parseInt(v[val].total_recovered.replace(",", ""));
-              _this.totalActiveCases += v[val].active_cases.replace(",", "") === "N/A" ? 0 : parseInt(v[val].active_cases.replace(",", ""));
+              _this.newCases += v[val].new_cases.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].new_cases.replace(",", "").replace(",", ""));
+              _this.newDeaths += v[val].new_deaths.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].new_deaths.replace(",", "").replace(",", ""));
+              _this.totalCases += v[val].cases.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].cases.replace(",", "").replace(",", "").replace(",", ""));
+              _this.totalDeaths += v[val].deaths.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].deaths.replace(",", "").replace(",", "").replace(",", ""));
+              _this.totalRecovered += v[val].total_recovered.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].total_recovered.replace(",", "").replace(",", ""));
+              _this.totalActiveCases += v[val].active_cases.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].active_cases.replace(",", "").replace(",", ""));
             }
           });
           console.log(this.dataSet);
@@ -1152,6 +1152,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             fetch(myRequest).then(function (response) {
               return response.json();
             }).then(function (data) {
+              console.log(data);
               observer.next(data.countries_stat);
               observer.complete();
             })["catch"](function (err) {// Error :(
