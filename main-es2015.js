@@ -318,32 +318,31 @@ class ContentComponent {
                 if (v[val].country_name !== "")
                     this.dataSet.push(v[val]);
                 this.newCases +=
-                    v[val].new_cases.replace(",", "").replace(",", "") === "N/A"
+                    v[val].new_cases.split(",").join("") === "N/A"
                         ? 0
-                        : parseInt(v[val].new_cases.replace(",", "").replace(",", ""));
+                        : parseInt(v[val].new_cases.split(",").join(""));
                 this.newDeaths +=
-                    v[val].new_deaths.replace(",", "").replace(",", "") === "N/A"
+                    v[val].new_deaths.split(",").join("") === "N/A"
                         ? 0
-                        : parseInt(v[val].new_deaths.replace(",", "").replace(",", ""));
+                        : parseInt(v[val].new_deaths.split(",").join(""));
                 this.totalCases +=
-                    v[val].cases.replace(",", "").replace(",", "") === "N/A"
+                    v[val].cases.split(",").join("") === "N/A"
                         ? 0
-                        : parseInt(v[val].cases.replace(",", "").replace(",", "").replace(",", ""));
+                        : parseInt(v[val].cases.split(",").join(""));
                 this.totalDeaths +=
-                    v[val].deaths.replace(",", "").replace(",", "") === "N/A"
+                    v[val].deaths.split(",").join("") === "N/A"
                         ? 0
-                        : parseInt(v[val].deaths.replace(",", "").replace(",", "").replace(",", ""));
+                        : parseInt(v[val].deaths.split(",").join(""));
                 this.totalRecovered +=
-                    v[val].total_recovered.replace(",", "").replace(",", "") === "N/A"
+                    v[val].total_recovered.split(",").join("") === "N/A"
                         ? 0
-                        : parseInt(v[val].total_recovered.replace(",", "").replace(",", ""));
+                        : parseInt(v[val].total_recovered.split(",").join(""));
                 this.totalActiveCases +=
-                    v[val].active_cases.replace(",", "").replace(",", "") === "N/A"
+                    v[val].active_cases.split(",").join("") === "N/A"
                         ? 0
-                        : parseInt(v[val].active_cases.replace(",", "").replace(",", ""));
+                        : parseInt(v[val].active_cases.split(",").join(""));
             }
         });
-        console.log(this.dataSet);
     }
 }
 ContentComponent.ɵfac = function ContentComponent_Factory(t) { return new (t || ContentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_data_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_mailing_mailing_service__WEBPACK_IMPORTED_MODULE_2__["MailingService"])); };

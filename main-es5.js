@@ -593,15 +593,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.service.getData().subscribe(function (v) {
             for (var val in v) {
               if (v[val].country_name !== "") _this.dataSet.push(v[val]);
-              _this.newCases += v[val].new_cases.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].new_cases.replace(",", "").replace(",", ""));
-              _this.newDeaths += v[val].new_deaths.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].new_deaths.replace(",", "").replace(",", ""));
-              _this.totalCases += v[val].cases.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].cases.replace(",", "").replace(",", "").replace(",", ""));
-              _this.totalDeaths += v[val].deaths.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].deaths.replace(",", "").replace(",", "").replace(",", ""));
-              _this.totalRecovered += v[val].total_recovered.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].total_recovered.replace(",", "").replace(",", ""));
-              _this.totalActiveCases += v[val].active_cases.replace(",", "").replace(",", "") === "N/A" ? 0 : parseInt(v[val].active_cases.replace(",", "").replace(",", ""));
+              _this.newCases += v[val].new_cases.split(",").join("") === "N/A" ? 0 : parseInt(v[val].new_cases.split(",").join(""));
+              _this.newDeaths += v[val].new_deaths.split(",").join("") === "N/A" ? 0 : parseInt(v[val].new_deaths.split(",").join(""));
+              _this.totalCases += v[val].cases.split(",").join("") === "N/A" ? 0 : parseInt(v[val].cases.split(",").join(""));
+              _this.totalDeaths += v[val].deaths.split(",").join("") === "N/A" ? 0 : parseInt(v[val].deaths.split(",").join(""));
+              _this.totalRecovered += v[val].total_recovered.split(",").join("") === "N/A" ? 0 : parseInt(v[val].total_recovered.split(",").join(""));
+              _this.totalActiveCases += v[val].active_cases.split(",").join("") === "N/A" ? 0 : parseInt(v[val].active_cases.split(",").join(""));
             }
           });
-          console.log(this.dataSet);
         }
       }]);
 
